@@ -1,0 +1,165 @@
+{% extends 'header_admin.html' %}
+{% load static %}
+{% block content %}
+
+                <!--app-content open-->
+				<div class="app-content">
+					<section class="section">
+
+					    <!--page-header open-->
+						<div class="page-header">
+							<ol class="breadcrumb"><!-- breadcrumb -->
+								<li class="breadcrumb-item"><a href="#"><i class="fe fe-home mr-2"></i>Pages</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Profile</li>
+							</ol><!-- End breadcrumb -->
+						</div>
+						<!--page-header closed-->
+
+                        <!--row open-->
+						<div class="row">
+							<div class="col-lg-12 col-xl-5 col-md-12 col-sm-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="text-center">
+											<div class="userprofile social">
+												<div class="userpic"> <img src="{% static 'assets/img/profile_photo/' %}{{request.session.photo}}" alt="" class="userpicimg"> </div>
+												<h3 class="username">{{user.first_name}}&nbsp;{{user.last_name}}</h3>
+												<p>{{user.role.role_name}}</p>
+												<div class="mt-3">
+													<a href="/admin/update_user_profile_show/" class="btn btn-secondary btn-sm mt-1"><i class="fe fe-edit followbtn ml-1"></i> Edit Profile</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-footer p-0">
+										<div class="row mr-0 ml-0">
+											<div class="col-md-6 border-right pr-0 pl-0">
+												<div class="p-3 text-center">
+													<h5 class="mb-0">Status</h5>
+													{% if user.user_status == 0 %}
+													<span class="text-muted mb-0 fs-14">Pending</span>
+													{% elif user.user_status == 1 %}
+													<span class="text-muted mb-0 fs-14">Active</span>
+													{% elif user.user_status == 2 %}
+													<span class="text-muted mb-0 fs-14">Rejected</span>
+													{% endif %}
+												</div>
+											</div>
+
+											<div class="col-md-6">
+												<div class="p-3 text-center">
+													<h5 class="mb-0">Complain Points</h5>
+													<span class="text-muted mb-0 fs-14">{{user.complain_points}}</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="card">
+									<div class="card-header">
+										<h4>Personal Details</h4>
+									</div>
+									<div class="card-body">
+										<p><b>Name :</b> {{user.first_name}}&nbsp;{{user.last_name}}</p>
+										<p><b>Email :</b> {{user.email}}</p>
+										<p><b>Phone :</b> {{user.contact_no}} </p>
+										<p><b>Aadhar card : </b> {{user.aadhar_card}} </p>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+						<!--row closed-->
+
+                        <!--row open-->
+						<div class="row profile-card">
+
+						</div>
+						<!--row closed-->
+
+					</section>
+				</div>
+				<!--app-content closed-->
+
+				<!-- Side-bar -->
+				<div class="sidebar sidebar-right sidebar-animate">
+					<div class="m-3">
+						<a href="#" class="text-right float-right" data-toggle="sidebar-right" data-target=".sidebar-right"><i class="fe fe-x"></i></a>
+					</div>
+					<div class="rightmenu ">
+						<h5>Latest News</h5>
+						<div class="p-2">
+							<div class="latest-timeline">
+								<ul class="timeline mb-0">
+									<li class="mt-0">
+										<a target="_blank" href="#">Sed ut perspiciatis </a>
+										<a href="#" class="float-right text-dark">23 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore. </p>
+									</li>
+									<li>
+										<a href="#">Nam libero tempore</a>
+										<a href="#" class="float-right text-dark">21 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  magna aliqua nisi ut aliquip. </p>
+									</li>
+									<li>
+										<a href="#">Excepteur  cupidatat</a>
+										<a href="#" class="float-right text-dark">18 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore  ut aliquip.</p>
+									</li>
+									<li class="mb-0">
+										<a href="#">Neque porro est</a>
+										<a href="#" class="float-right text-dark">17 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  aliqua nisi ut aliquip . </p>
+									</li>
+								</ul>
+							</div>
+							<div class="text-center">
+								<a href="#" class="btn btn-primary btn-block mb-4">Adding</a>
+							</div>
+						</div>
+						<h5>Visitors</h5>
+						<div class="card-body p-0">
+							<ul class="visitor list-unstyled list-unstyled-border">
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/6.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>10-4-2018</small></div>
+										<div class="media-title">Blake Vanessa</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/2.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>15-4-2018</small></div>
+										<div class="media-title">Keith Rutherford</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/3.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>17-4-2018</small></div>
+										<div class="media-title">Elizabeth Parsons</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media border-b0 p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/4.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>22-3-2018</small></div>
+										<div class="media-title">Nicola Lambert</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--side-bar Closed -->
+
+{% endblock %}
