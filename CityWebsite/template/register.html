@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 14:03:44 GMT -->
+<head>
+
+		<!-- Meta data -->
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta content="Treal- Admin Responsive Bootstrap HTML Dashboard Template" name="description">
+		<meta content="Spruko Technologies Private Limited" name="author">
+		<meta name="keywords" content="admin site template, html admin template,responsive admin template, admin panel template, bootstrap admin panel template, admin template, admin panel template, bootstrap simple admin template premium, simple bootstrap admin template, best bootstrap admin template, simple bootstrap admin template, admin panel template,responsive admin template, bootstrap simple admin template premium"/>
+
+		<!-- Title -->
+		<title>CITY OVERSIGHT</title>
+
+		<!--favicon -->
+		<link rel="icon" href="{% static 'assets/img/brand/favicon.ico' %}" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+		<!--Icons css-->
+		<link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+
+		<!-- P-Scrollbar css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/p-scroll/p-scroll.css' %}">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/sidemenu/sidemenu-1/closed-sidemenu.css' %}">
+
+		<!-- Sidemenu-responsive-tabs  css -->
+		<link href="{% static 'assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css' %}" rel="stylesheet">
+
+		<!-- Siderbar css-->
+		<link href="{% static 'assets/plugins/sidebar/sidebar.css' %}" rel="stylesheet">
+
+		<!-- Color-skins css -->
+		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{% static 'assets/css/color-skins/color.css' %}" />
+		
+
+	</head>
+
+	<body class="bg-primary">
+	
+		<!--app open-->
+		<div id="app" class="page">
+			<section class="section">
+				<div class="container">
+
+				    <!--row open-->
+					<div class="row">
+						<div class="single-page">
+							<div class="wrapper wrapper2">
+								<form  class="card-body" tabindex="500" method="post" action="/register/" data-parsley-validate="">
+									{% csrf_token %}
+									<h3 class="text-dark">Register</h3>
+									 <div class="text">
+										 <select name="role" class="form-control" data-parsley-required="true" data-parsley-required-message="Role Selection is required" >
+											 <option value="" hidden>Select a role</option>
+											 {% for role in role %}
+											 <option value="{{role.role_id}}">{{role.role_name}} </option>
+											 {% endfor %}
+										 </select>
+									 </div>
+									<div class="row">
+										<div class="col-md-6 mb-3">
+											<input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" data-parsley-required="true"
+												   data-parsley-required-message="First Name is required">
+										</div>
+										<div class="col-md-6 mb-3">
+											<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" data-parsley-required="true"
+												   data-parsley-required-message="Last Name is required" >
+										</div>
+									</div>
+									<div class="mail">
+										<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" data-parsley-required="true"
+											   data-parsley-required-message="Email is required" >
+									</div>
+									<div class="passwd">
+										<input type="password" class="form-control" id="password" name="password" placeholder="Password" data-parsley-required="true"
+											   data-parsley-required-message="Password is required"
+											   data-parsley-pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,15}$"
+										title="Must contain at least one number, one uppercase, one lowercase, one special character, and at least 6 to 15 characters"/>
+									</div>
+
+									<div class="cpasswd">
+										<input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password"
+											   data-parsley-required="true" data-parsley-required-message="Confirm Password is required" data-parsley-equalto="#password">
+									</div>
+									<div class="text">
+										<input type="text" data-type="adhaar-number" class="form-control" id="aadhar_card" name="aadhar_card" placeholder="Aadhar Card Number"
+											   data-parsley-required="true" data-parsley-required-message="Aadhar Card is required"
+											   maxLength="14" data-parsley-pattern="^\d{4}-\d{4}-\d{4}$">
+									</div>
+									<div class="text">
+										<input type="text" data-type="contact-number" class="form-control" id="contact_no" name="contact_no" placeholder="Contact No"
+											   data-parsley-required="true" data-parsley-required-message="Contact No is required" maxlength="10"
+											   data-parsley-pattern="^(\d{8}|\d{10})$">
+									</div>
+
+									<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+
+									<script>
+										$('[data-type="adhaar-number"]').keyup(function()
+										{
+										  var value = $(this).val();
+										  value = value.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("-");
+										  $(this).val(value);
+										});
+
+										$('[data-type="adhaar-number"]').on("change, blur", function()
+										{
+										  var value = $(this).val();
+										  var maxLength = $(this).attr("maxLength");
+										  if (value.length != maxLength)
+										  {
+											$(this).addClass("highlight-error");
+										  } else
+										  {
+											$(this).removeClass("highlight-error");
+										  }
+										});
+									</script>
+
+									<script>
+										$('[data-type="contact-number"]').keyup(function()
+										{
+										  var value = $(this).val();
+										  value = value.replace(/\D/g, "").split(/(?:([\d]{3}))/g).filter(s => s.length > 0).join("");
+										  $(this).val(value);
+										});
+
+										$('[data-type="contact-number"]').on("change, blur", function()
+										{
+										  var value = $(this).val();
+										  var maxLength = $(this).attr("maxLength");
+										  if (value.length != maxLength)
+										  {
+											$(this).addClass("highlight-error");
+										  } else
+										  {
+											$(this).removeClass("highlight-error");
+										  }
+										});
+									</script>
+
+									<style rel="stylesheet">
+										.highlight-error {
+											  border-color: red;
+											}
+									</style>
+
+									<div class="submit">
+									<button type="submit" class="btn btn-primary btn-block">Register</button>
+									</div>
+									{% for data in messages %}
+										<p style="color:red">{{data}}</p>
+									{% endfor %}
+									<p class="text-dark mb-0">Already have account?<a href="/login/" class="text-primary ml-1">Sign In</a></p>
+
+								</form>
+
+								<div class="mb-4">
+									<div class="socials text-center"> <a href="#" class="btn btn-circle btn-primary ">
+										<i class="fa fa-facebook"></i></a> <a href="#" class="btn btn-circle btn-danger ">
+										<i class="fa fa-google-plus"></i></a> <a href="#" class="btn btn-circle btn-info ">
+										<i class="fa fa-twitter"></i></a> <a href="#" class="btn btn-circle btn-warning "><i class="fa fa-envelope"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--row closed-->
+
+				</div>
+			</section>
+		</div>
+		<!--app closed-->
+
+		<!--Jquery.min js-->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'assets/js/parsley.min.js' %}"></script>
+
+		<link  rel="stylesheet" type="text/css" href="{% static 'assets/css/parsley.css' %}" />
+
+		<!--popper js-->
+		<script src="{% static 'assets/js/popper.js' %}"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!--Tooltip js-->
+		<script src="{% static 'assets/js/tooltip.js' %}"></script>
+
+		<!-- Jquery star rating-->
+		<script src="{% static 'assets/plugins/rating/jquery.rating-stars.js' %}"></script>
+
+		<!--Scroll-up-bar.min js-->
+		<script src="{% static 'assets/js/moment.min.js' %}"></script>
+
+		<!--Sidemenu js-->
+		<script src="{% static 'assets/plugins/sidemenu/sidemenu-1/sidemenu-1.js' %}"></script>
+
+		<!-- Sidemenu-responsive-tabs  js -->
+		<script src="{% static 'assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js' %}"></script>
+
+		<!-- Sidebar js-->
+		<script src="{% static 'assets/plugins/sidebar/sidebar.js' %}"></script>
+
+		<!--P-Scrollbar js-->
+		<script src="{% static 'assets/plugins/p-scroll/p-scroll.js' %}"></script>
+		<script src="{% static 'assets/js/p-scroll.js' %}"></script>
+
+		<!--Othercharts js-->
+		<script src="{% static 'assets/plugins/othercharts/jquery.knob.js' %}"></script>
+		<script src="{% static 'assets/plugins/othercharts/jquery.sparkline.min.js' %}"></script>
+
+		<!--OtherCharts js-->
+		<script src="{% static 'assets/js/othercharts.js' %}"></script>
+
+		<!--Showmore js-->
+		<script src="{% static 'assets/js/jquery.showmore.js' %}"></script>
+
+		<!--Scripts js-->
+		<script src="{% static 'assets/js/scripts1.js' %}"></script>
+		
+	</body>
+
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 14:03:44 GMT -->
+</html>

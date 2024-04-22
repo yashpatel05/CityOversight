@@ -1,0 +1,169 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+                <!--app-content open-->
+				<div class="app-content">
+					<section class="section">
+
+					    <!--page-header open-->
+						<div class="page-header">
+							<ol class="breadcrumb"><!-- breadcrumb -->
+								<li class="breadcrumb-item"><a href="#"><i class="fe fe-home mr-2"></i>Tables</a></li>
+								<li class="breadcrumb-item active" aria-current="page">DataTables</li>
+							</ol><!-- End breadcrumb -->
+						</div>
+						<!--page-header closed-->
+
+
+
+                        <!--row open-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card export-database">
+									<div class="card-header">
+										<h4>File export Datatables</h4>
+									</div>
+									<div class="card-body">
+
+										<div class="table-responsive">
+											<table id="example" class="table table-bordered border-t0 key-buttons text-nowrap w-100" >
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>Name</th>
+														<th>Role Name</th>
+														<th>Email</th>
+														<th>Aadhar Card</th>
+														<th>Contact No</th>
+														<th>Created Date</th>
+														<th>Updated Date</th>
+														<th>Status</th>
+														<th>Complain Points</th>
+													</tr>
+												</thead>
+												<tbody>
+													{%for user in user%}
+													<tr>
+														<td>{{user.first_name}}&nbsp;{{user.last_name}}</td>
+														<td>{{user.role.role_name}}</td>
+														<td>{{user.email}}</td>
+														<td>{{user.aadhar_card}}</td>
+														<td>{{user.contact_no}}</td>
+														<td>{{user.created_date}}</td>
+														<td>{{user.updated_date}}</td>
+														{% if user.user_status == 0 %}
+														<td><div class="btn btn-warning m-b-5 m-t-5">Pending</div></td>
+														{% elif user.user_status == 1 %}
+														<td>{% if user.role.role_name != 'super admin' %}<a href="/change_user_status/{{user.user_id}}">{% endif %}<div class="btn btn-success m-b-5 m-t-5">Active</div>{% if user.role.role_name != 'super admin' %}</a>{% endif %}</td>
+														{% elif user.user_status == 2 %}
+														<td><a href="/change_user_status/{{user.user_id}}"><div class="btn btn-danger m-b-5 m-t-5">Rejected</div></a></td>
+														{% endif %}
+														<td>{{user.complain_points}}</td>
+													</tr>
+													{% endfor %}
+													</tbody>
+											</table>
+
+											<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+
+
+											<script>
+												var tables = document.getElementsByTagName('table');
+												var table = tables[tables.length - 1];
+												var rows = table.rows;
+												for(var i = 0, td; i < rows.length; i++)
+												{
+													td = document.createElement('td');
+													td.appendChild(document.createTextNode(i + 1));
+													rows[i+1].insertBefore(td, rows[i+1].firstChild);
+												}
+											</script>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--row closed-->
+
+					</section>
+				</div>
+				<!--app-content closed-->
+
+				<!-- Side-bar -->
+				<div class="sidebar sidebar-right sidebar-animate">
+					<div class="m-3">
+						<a href="#" class="text-right float-right" data-toggle="sidebar-right" data-target=".sidebar-right"><i class="fe fe-x"></i></a>
+					</div>
+					<div class="rightmenu ">
+						<h5>Latest News</h5>
+						<div class="p-2">
+							<div class="latest-timeline">
+								<ul class="timeline mb-0">
+									<li class="mt-0">
+										<a target="_blank" href="#">Sed ut perspiciatis </a>
+										<a href="#" class="float-right text-dark">23 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore. </p>
+									</li>
+									<li>
+										<a href="#">Nam libero tempore</a>
+										<a href="#" class="float-right text-dark">21 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  magna aliqua nisi ut aliquip. </p>
+									</li>
+									<li>
+										<a href="#">Excepteur  cupidatat</a>
+										<a href="#" class="float-right text-dark">18 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore  ut aliquip.</p>
+									</li>
+									<li class="mb-0">
+										<a href="#">Neque porro est</a>
+										<a href="#" class="float-right text-dark">17 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  aliqua nisi ut aliquip . </p>
+									</li>
+								</ul>
+							</div>
+							<div class="text-center">
+								<a href="#" class="btn btn-primary btn-block mb-4">Adding</a>
+							</div>
+						</div>
+						<h5>Visitors</h5>
+						<div class="card-body p-0">
+							<ul class="visitor list-unstyled list-unstyled-border">
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/avatar/6.jpg' %}" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>10-4-2018</small></div>
+										<div class="media-title">Blake Vanessa</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/avatar/2.jpg' %}" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>15-4-2018</small></div>
+										<div class="media-title">Keith Rutherford</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/avatar/3.jpg' %}" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>17-4-2018</small></div>
+										<div class="media-title">Elizabeth Parsons</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media border-b0 p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/avatar/4.jpg' %}" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>22-3-2018</small></div>
+										<div class="media-title">Nicola Lambert</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--side-bar Closed -->
+
+{% endblock %}

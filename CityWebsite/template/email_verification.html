@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/reset.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 14:03:44 GMT -->
+<head>
+
+		<!-- Meta data -->
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta content="Treal- Admin Responsive Bootstrap HTML Dashboard Template" name="description">
+		<meta content="Spruko Technologies Private Limited" name="author">
+		<meta name="keywords" content="admin site template, html admin template,responsive admin template, admin panel template, bootstrap admin panel template, admin template, admin panel template, bootstrap simple admin template premium, simple bootstrap admin template, best bootstrap admin template, simple bootstrap admin template, admin panel template,responsive admin template, bootstrap simple admin template premium"/>
+
+		<!-- Title -->
+		<title>CITY OVERSIGHT</title>
+
+		<!--favicon -->
+		<link rel="icon" href="{% static 'assets/img/brand/favicon.ico' %}" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+		<!--Icons css-->
+		<link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+
+		<!-- P-Scrollbar css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/p-scroll/p-scroll.css' %}">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/sidemenu/sidemenu-1/closed-sidemenu.css' %}">
+
+		<!-- Sidemenu-responsive-tabs  css -->
+		<link href="{% static 'assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css' %}" rel="stylesheet">
+
+		<!-- Siderbar css-->
+		<link href="{% static 'assets/plugins/sidebar/sidebar.css' %}" rel="stylesheet">
+
+		<!-- Color-skins css -->
+		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{% static 'assets/css/color-skins/color.css' %}" />
+		
+
+	</head>
+
+	<body class="bg-primary">
+
+	    <!--app open-->
+		<div id="app" class="page">
+			<section class="section">
+				<div class="container mt-6 mb-5">
+				    <!--row open-->
+					<div class="row">
+						<div class="single-page">
+							<div class=" wrapper">
+								<form  class="card-body" tabindex="500" method="post" action="/email_verification/">
+									{% csrf_token %}
+									<h3 class="text-dark text-center">Email Verification</h3>
+									<div class="text">
+										<input type="text" class="form-control" id="otp" name="otp" placeholder="Enter OTP Sent To Email" required/>
+									</div>
+
+									<div class="submit mt-1 mb-0">
+										<button type="submit" class="btn btn-primary btn-block">Verify OTP</button>
+									</div>
+									<span style="color:red">
+										{% for data in messages %}
+											<p>{{data}}</p>
+										{% endfor %}
+									</span>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!--row closed-->
+				</div>
+			</section>
+		</div>
+		<!--app closed-->
+
+		<!--Jquery.min js-->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'assets/js/parsley.min.js' %}"></script>
+
+		<link  rel="stylesheet" type="text/css" href="{% static 'assets/css/parsley.css' %}" />
+
+		<!--popper js-->
+		<script src="{% static 'assets/js/popper.js' %}"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!--Tooltip js-->
+		<script src="{% static 'assets/js/tooltip.js' %}"></script>
+
+		<!-- Jquery star rating-->
+		<script src="{% static 'assets/plugins/rating/jquery.rating-stars.js' %}"></script>
+
+		<!--Moment js-->
+		<script src="{% static 'assets/js/moment.min.js' %}"></script>
+
+		<!--Sidemenu js-->
+		<script src="{% static 'assets/plugins/sidemenu/sidemenu-1/sidemenu-1.js' %}"></script>
+
+		<!-- Sidemenu-responsive-tabs  js -->
+		<script src="{% static 'assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js' %}"></script>
+
+		<!-- Sidebar js-->
+		<script src="{% static 'assets/plugins/sidebar/sidebar.js' %}"></script>
+
+		<!--P-Scrollbar js-->
+		<script src="{% static 'assets/plugins/p-scroll/p-scroll.js' %}"></script>
+		<script src="{% static 'assets/js/p-scroll.js' %}"></script>
+
+		<!--Othercharts js-->
+		<script src="{% static 'assets/plugins/othercharts/jquery.knob.js' %}"></script>
+		<script src="{% static 'assets/plugins/othercharts/jquery.sparkline.min.js' %}"></script>
+
+		<!--OtherCharts js-->
+		<script src="{% static 'assets/js/othercharts.js' %}"></script>
+
+		<!--Showmore js-->
+		<script src="{% static 'assets/js/jquery.showmore.js' %}"></script>
+
+		<!--Scripts js-->
+		<script src="{% static 'assets/js/scripts1.js' %}"></script>
+	</body>
+
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/reset.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 14:03:44 GMT -->
+</html>

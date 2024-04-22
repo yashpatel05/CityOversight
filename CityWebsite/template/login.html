@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 13:58:29 GMT -->
+<head>
+
+		<!-- Meta data -->
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta content="Treal- Admin Responsive Bootstrap HTML Dashboard Template" name="description">
+		<meta content="Spruko Technologies Private Limited" name="author">
+		<meta name="keywords" content="admin site template, html admin template,responsive admin template, admin panel template, bootstrap admin panel template, admin template, admin panel template, bootstrap simple admin template premium, simple bootstrap admin template, best bootstrap admin template, simple bootstrap admin template, admin panel template,responsive admin template, bootstrap simple admin template premium"/>
+
+		<!-- Title -->
+		<title>CITY OVERSIGHT</title>
+
+		<!--Favicon -->
+		<link rel="icon" href="{% static 'assets/img/brand/favicon.ico' %}" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+		<!--Icons css-->
+		<link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+
+		<!-- P-Scrollbar css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/p-scroll/p-scroll.css' %}">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/sidemenu/sidemenu-1/closed-sidemenu.css' %}">
+
+		<!-- Sidemenu-responsive-tabs  css -->
+		<link href="{% static 'assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css' %}" rel="stylesheet">
+
+		<!-- Siderbar css-->
+		<link href="{% static 'assets/plugins/sidebar/sidebar.css' %}" rel="stylesheet">
+
+		<!-- Color-skins css -->
+		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{% static 'assets/css/color-skins/color.css' %}" />
+
+	</head>
+
+	<body class="bg-primary">
+
+	    <!--app open-->
+		<div id="app" class="page">
+			<div class="page-content">
+				<div class="container">
+					<!--single-page open-->
+					<div class="single-page">
+						<div class="wrapper wrapper2">
+							<form id="login" class="card-body" tabindex="500" method="post" action="/login/">
+								{% csrf_token %}
+								<h3 class="text-dark">Login</h3>
+								<div class="mail">
+									<input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email" required/>
+								</div>
+								<div class="passwd">
+									<input type="password" class="form-control" id="exampleInputPassword1" name="pass" placeholder="Password" required/>
+								</div>
+								<p class="mb-3 text-right"><a href="/forgot/">Forgot Password</a></p>
+								<div class="submit">
+									<button type="submit" class="btn btn-primary btn-block">Login</button>
+								</div>
+								<span style="color:red">
+									{% for data in messages %}
+										<p>{{data}}</p>
+									{% endfor %}
+								</span>
+								<div class="signup mb-0" >
+									<p class="text-dark mb-0">Don't have account?<a href="/register/" class="text-primary ml-1">Sign UP</a></p>
+								</div>
+							</form>
+							<div class="mb-4">
+								<div class="socials text-center"> <a href="#" class="btn btn-circle btn-primary ">
+									<i class="fa fa-facebook"></i></a> <a href="#" class="btn btn-circle btn-danger ">
+									<i class="fa fa-google-plus"></i></a> <a href="#" class="btn btn-circle btn-info ">
+									<i class="fa fa-twitter"></i></a> <a href="#" class="btn btn-circle btn-warning "><i class="fa fa-envelope"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--single-page closed-->
+				</div>
+			</div>
+		</div>
+		<!--app closed-->
+
+		<!--Jquery.min js-->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'assets/js/parsley.min.js' %}"></script>
+
+		<link  rel="stylesheet" type="text/css" href="{% static 'assets/css/parsley.css' %}" />
+
+		<!--popper js-->
+		<script src="{% static 'assets/js/popper.js' %}"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!--Tooltip js-->
+		<script src="{% static 'assets/js/tooltip.js' %}"></script>
+
+		<!-- Jquery star rating-->
+		<script src="{% static 'assets/plugins/rating/jquery.rating-stars.js' %}"></script>
+
+		<!--Moment js-->
+		<script src="{% static 'assets/js/moment.min.js' %}"></script>
+
+		<!--Sidemenu js-->
+		<script src="{% static 'assets/plugins/sidemenu/sidemenu-1/sidemenu-1.js' %}"></script>
+
+		<!-- Sidemenu-responsive-tabs  js -->
+		<script src="{% static 'assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js' %}"></script>
+
+		<!-- Sidebar js-->
+		<script src="{% static 'assets/plugins/sidebar/sidebar.js' %}"></script>
+
+		<!--P-Scrollbar js-->
+		<script src="{% static 'assets/plugins/p-scroll/p-scroll.js' %}"></script>
+		<script src="{% static 'assets/js/p-scroll.js' %}"></script>
+
+		<!--Othercharts js-->
+		<script src="{% static 'assets/plugins/othercharts/jquery.knob.js' %}"></script>
+		<script src="{% static 'assets/plugins/othercharts/jquery.sparkline.min.js' %}"></script>
+
+		<!--OtherCharts js-->
+		<script src="{% static 'assets/js/othercharts.js' %}"></script>
+
+		<!--Showmore js-->
+		<script src="{% static 'assets/js/jquery.showmore.js' %}"></script>
+
+		<!--Scripts js-->
+		<script src="{% static 'assets/js/scripts1.js' %}"></script>
+	</body>
+
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 13:58:30 GMT -->
+</html>

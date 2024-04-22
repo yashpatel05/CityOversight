@@ -1,0 +1,153 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+                <!--app-content open-->
+				<div class="app-content">
+					<section class="section">
+
+					    <!--page-header open-->
+						<div class="page-header">
+							<ol class="breadcrumb"><!-- breadcrumb -->
+								<li class="breadcrumb-item"><a href="#"><i class="fe fe-home mr-2"></i>Forms</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Form Validation</li>
+							</ol><!-- End breadcrumb -->
+							<div class="ml-auto">
+								<div class="input-group">
+									<a href="#" class="btn btn-success btn-icon text-white mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Analytics">
+										<span>
+											<i class="fe fe-bar-chart"></i>
+										</span>
+									</a>
+									<a href="#" class="btn btn-primary btn-icon text-white mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Add New Account">
+										<span>
+											<i class="fe fe-plus"></i>
+										</span>
+									</a>
+									<a href="#" class="btn btn-secondary btn-icon text-white mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Export">
+										<span>
+											<i class="fe fe-log-in"></i>
+										</span>
+									</a>
+									<a href="#" class="btn btn-icon btn-info text-white mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Help">
+										<span>
+											<i class="fe fe-help-circle"></i>
+										</span>
+									</a>
+									<a href="#" class="btn btn-icon btn-danger text-white" data-toggle="tooltip" title="" data-placement="top" data-original-title="Settings">
+										<span>
+											<i class="fe fe-settings"></i>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!--page-header closed-->
+
+                        <!--row open-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<h3>Add New State</h3>
+									</div>
+									<div class="card-body">
+										<form  id="form-validation"  method="post" action="/insert_camera_state/">
+											{% csrf_token %}
+											<div class="row">
+												<div class="col-md-6 mb-3">
+													<h6>State Name :</h6>
+													<input type="text" class="form-control" id="state_name" placeholder="State name" name="state_name" required/>
+												</div>
+											</div>
+
+											<button class="btn btn-primary" type="submit">Submit</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--row closed-->
+
+
+					</section>
+				</div>
+				<!--app-content closed-->
+
+				<!-- Side-bar -->
+				<div class="sidebar sidebar-right sidebar-animate">
+					<div class="m-3">
+						<a href="#" class="text-right float-right" data-toggle="sidebar-right" data-target=".sidebar-right"><i class="fe fe-x"></i></a>
+					</div>
+					<div class="rightmenu ">
+						<h5>Latest News</h5>
+						<div class="p-2">
+							<div class="latest-timeline">
+								<ul class="timeline mb-0">
+									<li class="mt-0">
+										<a target="_blank" href="#">Sed ut perspiciatis </a>
+										<a href="#" class="float-right text-dark">23 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore. </p>
+									</li>
+									<li>
+										<a href="#">Nam libero tempore</a>
+										<a href="#" class="float-right text-dark">21 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  magna aliqua nisi ut aliquip. </p>
+									</li>
+									<li>
+										<a href="#">Excepteur  cupidatat</a>
+										<a href="#" class="float-right text-dark">18 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore  ut aliquip.</p>
+									</li>
+									<li class="mb-0">
+										<a href="#">Neque porro est</a>
+										<a href="#" class="float-right text-dark">17 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  aliqua nisi ut aliquip . </p>
+									</li>
+								</ul>
+							</div>
+							<div class="text-center">
+								<a href="#" class="btn btn-primary btn-block mb-4">Adding</a>
+							</div>
+						</div>
+						<h5>Visitors</h5>
+						<div class="card-body p-0">
+							<ul class="visitor list-unstyled list-unstyled-border">
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/6.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>10-4-2018</small></div>
+										<div class="media-title">Blake Vanessa</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/2.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>15-4-2018</small></div>
+										<div class="media-title">Keith Rutherford</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/3.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>17-4-2018</small></div>
+										<div class="media-title">Elizabeth Parsons</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media border-b0 p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/4.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>22-3-2018</small></div>
+										<div class="media-title">Nicola Lambert</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--side-bar Closed -->
+{% endblock %}

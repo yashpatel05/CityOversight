@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/show_user_signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 14:01:55 GMT -->
+<head>
+
+		<!-- Meta data -->
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta content="Treal- Admin Responsive Bootstrap HTML Dashboard Template" name="description">
+		<meta content="Spruko Technologies Private Limited" name="author">
+		<meta name="keywords" content="admin site template, html admin template,responsive admin template, admin panel template, bootstrap admin panel template, admin template, admin panel template, bootstrap simple admin template premium, simple bootstrap admin template, best bootstrap admin template, simple bootstrap admin template, admin panel template,responsive admin template, bootstrap simple admin template premium"/>
+
+		<!-- Title -->
+		<title>CITY OVERSIGHT</title>
+
+		<!--Favicon -->
+		<link rel="icon" href="{% static 'assets/img/brand/favicon.ico' %}" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<link href="{% static 'assets/css/dark-style.css' %}" rel="stylesheet" />
+		<link href="{% static 'assets/css/skin-mode.css' %}" rel="stylesheet" />
+
+		<!--DataTables css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/Datatable/css/dataTables.bootstrap4.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/plugins/Datatable/css/buttons.bootstrap4.min.css' %}">
+
+		<!--Icons css-->
+		<link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+
+		<!-- P-Scrollbar css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/p-scroll/p-scroll.css' %}">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="{% static 'assets/plugins/sidemenu/sidemenu-1/closed-sidemenu.css' %}">
+
+		<!-- Sidemenu-responsive-tabs  css -->
+		<link href="{% static 'assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css' %}" rel="stylesheet">
+
+		<!-- Siderbar css-->
+		<link href="{% static 'assets/plugins/sidebar/sidebar.css' %}" rel="stylesheet">
+
+		<!-- Color-skins css -->
+		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{% static 'assets/css/color-skins/color15.css' %}" />
+
+		<!-- Switcher css -->
+		<link  href="{% static 'assets/switcher/css/switcher.css' %}" rel="stylesheet" id="switcher-css" type="text/css" media="all"/>
+		<link  href="{% static 'assets/switcher/demo.css' %}" rel="stylesheet"/>
+
+	</head>
+
+	<body class="app sidebar-mini">
+
+		<!-- Start Switcher -->
+		<div class="switcher-wrapper ">
+			<div class="demo_changer">
+				<div class="demo-icon bg_dark"><i class="fa fa-angle-double-left arrow1 text_primary"></i></div>
+				<div class="form_holder sidebar-right1">
+					<div class="row">
+						<div class="predefined_styles">
+							<div class="skin-theme-switcher">
+
+								<div class="swichermainleft">
+									<h4>Theme Mode</h4>
+									<div class="switch_section">
+										<div class="switch-toggle d-flex">
+											<span class="mr-auto">Light-Mode</span>
+											<div class="onoffswitch2"><input type="radio" name="onoffswitch2" id="myonoffswitch1" class="onoffswitch2-checkbox" checked>
+												<label for="myonoffswitch1" class="onoffswitch2-label"></label>
+											</div>
+										</div>
+										<div class="switch-toggle d-flex">
+											<span class="mr-auto">Dark-Mode</span>
+											<div class="onoffswitch2"><input type="radio" name="onoffswitch2" id="myonoffswitch2" class="onoffswitch2-checkbox">
+												<label for="myonoffswitch2" class="onoffswitch2-label"></label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swichermainleft">
+									<h4>Color-Skins</h4>
+									<div class="skin-body">
+										<a class="wscolorcode1 blackborder color1" href="#" data-theme="{% static 'assets/css/color-skins/color1.css' %}"></a>
+										<a class="wscolorcode1 blackborder color2" href="#" data-theme="{% static 'assets/css/color-skins/color2.css' %}"></a>
+										<a class="wscolorcode1 blackborder color3" href="#" data-theme="{% static 'assets/css/color-skins/color3.css' %}"></a>
+										<a class="wscolorcode1 blackborder color4" href="#" data-theme="{% static 'assets/css/color-skins/color4.css' %}"></a>
+										<a class="wscolorcode1 blackborder color5" href="#" data-theme="{% static 'assets/css/color-skins/color5.css' %}"></a>
+										<a class="wscolorcode1 blackborder color6" href="#" data-theme="{% static 'assets/css/color-skins/color6.css' %}"></a>
+										<a class="wscolorcode1 blackborder color7" href="#" data-theme="{% static 'assets/css/color-skins/color7.css' %}"></a>
+										<a class="wscolorcode1 blackborder color8" href="#" data-theme="{% static 'assets/css/color-skins/color8.css' %}"></a>
+										<a class="wscolorcode1 blackborder color9" href="#" data-theme="{% static 'assets/css/color-skins/color9.css' %}"></a>
+										<a class="wscolorcode1 blackborder color10" href="#" data-theme="{% static 'assets/css/color-skins/color10.css' %}"></a>
+									</div>
+								</div>
+								<div class="swichermainleft">
+									<h4>Graident-Color</h4>
+									<div class="skin-body">
+										<a class="wscolorcode1 blackborder color11" href="#" data-theme="{% static 'assets/css/color-skins/color11.css' %}"></a>
+										<a class="wscolorcode1 blackborder color12" href="#" data-theme="{% static 'assets/css/color-skins/color12.css' %}"></a>
+										<a class="wscolorcode1 blackborder color13" href="#" data-theme="{% static 'assets/css/color-skins/color13.css' %}"></a>
+										<a class="wscolorcode1 blackborder color14" href="#" data-theme="{% static 'assets/css/color-skins/color14.css' %}"></a>
+										<a class="wscolorcode1 blackborder color15" href="#" data-theme="{% static 'assets/css/color-skins/color15.css' %}"></a>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="swichermainleft">
+									<h4>Horizontal Versions</h4>
+									<div class="switch_section">
+										<div class="switch-toggle d-flex">
+											<span class="mr-auto">Default Leftmenu</span>
+											<div class="onoffswitch2"><input type="radio" name="onoffswitch2" id="myonoffswitch7" class="onoffswitch2-checkbox">
+												<label for="myonoffswitch7" class="onoffswitch2-label"></label>
+											</div>
+										</div>
+										<div class="switch-toggle d-flex">
+											<span class="mr-auto">Leftmenu Boxed</span>
+											<div class="onoffswitch2"><input type="radio" name="onoffswitch2" id="myonoffswitch8" class="onoffswitch2-checkbox">
+												<label for="myonoffswitch8" class="onoffswitch2-label"></label>
+											</div>
+										</div>
+										<div class="switch-toggle d-flex">
+											<span class="mr-auto">Dark Leftmenu</span>
+											<div class="onoffswitch2"><input type="radio" name="onoffswitch2" id="myonoffswitch9" class="onoffswitch2-checkbox">
+												<label for="myonoffswitch9" class="onoffswitch2-label"></label>
+											</div>
+										</div>
+										<div class="switch-toggle d-flex">
+											<span class="mr-auto">Dark Leftmenu Boxed</span>
+											<div class="onoffswitch2"><input type="radio" name="onoffswitch2" id="myonoffswitch10" class="onoffswitch2-checkbox">
+												<label for="myonoffswitch10" class="onoffswitch2-label"></label>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Switcher -->
+
+		<!--loader -->
+		<div id="spinner">
+			<img src="{% static 'assets/img/svgs/loader.svg' %}" alt="loader">
+		</div>
+
+		<!--app open-->
+		<div id="app" class="page">
+			<div class="main-wrapper" >
+
+			    <!--nav open-->
+				<nav class="navbar navbar-expand-lg main-navbar left-header">
+					<a class="header-brand" href="#">
+						<img src="{% static 'assets/img/brand/icon.png' %}" class="header-brand-img main-logo" alt="Treal-Admin  logo">&nbsp;<div style="color:white;float:right">CITY OVERSIGHT</div>
+						<img src="{% static 'assets/img/brand/icon.png' %}" class="header-brand-img mobile-logo" alt="Treal-Admin  logo">
+					</a>
+					<form class="form-inline mr-auto">
+						<ul class="navbar-nav mr-2">
+							<li><a href="#" data-toggle="sidebar" class="nav-link nav-link toggle"><i class="fe fe-align-justify"></i></a></li>
+							<li><a href="#" data-toggle="search" class="nav-link nav-link d-md-none navsearch"><i class="fe fe-search"></i></a></li>
+						</ul>
+
+						<!--
+						<div class="search-element mr-3">
+							<input class="form-control" placeholder="Search" aria-label="Search">
+							<span class="Search-icon"><i class="fa fa-search"></i></span>
+						</div>
+						-->
+
+					</form>
+					<ul class="navbar-nav navbar-right">
+						<li class="dropdown dropdown-list-toggle header-fullscreen">
+							<a href="#" class="nav-link nav-link-lg full-screen-link" id="fullscreen-button">
+								<i class="fe fe-maximize"></i>
+							</a>
+						</li>
+
+						<!-- navbar mobile-->
+						<li>
+							<a href="#" class="navresponsive-toggler d-sm-none nav-link  nav-link-lg d-flex"  data-toggle="collapse" data-target="#navbarSupportedContent-4"
+							aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+								<i class="navbar-toggler-icon fe fe-more-vertical text-white"></i>
+							</a>
+						</li><!-- navbar mobile-->
+						<li class="dropdown header-user">
+							<a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg d-flex">
+								<span><img src="{% static 'assets/img/profile_photo/' %}{{request.session.photo}}" alt="profile-user" class="rounded-circle w-32 mr-2"></span>
+								<span class=" mt-2 d-none d-lg-block ">
+
+									<span class="text-white"><span class="ml-1">{{request.session.first_name}}</span></span>
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class=" dropdown-header noti-title text-center border-bottom pb-3">
+									<h5 class="text-capitalize text-dark mb-1">Welcome</h5>
+								</div>
+								<a class="dropdown-item" href="/profile/"><i class="mdi mdi-account-outline mr-2"></i> <span>My profile</span></a>
+								<a class="dropdown-item" href="/update_user_profile_show/"><i class="mdi mdi-account-plus mr-2"></i> <span>Edit profile</span></a>
+								<a class="dropdown-item" href="/logout/"><i class="mdi  mdi-logout-variant mr-2"></i> <span>Logout</span></a>
+							</div>
+						</li>
+
+					</ul>
+				</nav>
+				<!--nav closed-->
+
+				<!--navbar mobile--->
+				<div class="mb-1 responsive-navbar navbar-dark d-sm-none bg-white">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+						<ul class="navbar-nav navbar-right">
+							<li class="dropdown header-fullscreen">
+								<a href="#" class="nav-link nav-link-lg full-screen-link" id="fullscreen-button">
+									<i class="fe fe-maximize"></i>
+								</a>
+							</li>
+							<li class="dropdown  header-flags1">
+								<a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg ">
+									<span><img src="{% static 'assets/img/flags/french_flag.jpg' %}" alt="flag-img"></span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-lg  dropdown-menu-right">
+									<a href="#" class="dropdown-item d-flex align-items-center">
+										<img src="{% static 'assets/img/flags/us_flag.jpg' %}" alt="flag-img" class=" flag-sm mr-3 align-self-center">
+										<div>
+											<b>USA</b>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex align-items-center">
+										<img src="{% static 'assets/img/flags/germany_flag.jpg' %}" alt="flag-img" class=" flag-sm mr-3 align-self-center">
+										<div>
+											<b>Germany</b>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex align-items-center">
+										<img src="{% static 'assets/img/flags/italy_flag.jpg' %}" alt="flag-img" class=" flag-sm  mr-3 align-self-center">
+										<div>
+											<b>Italy</b>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex align-items-center">
+										<img src="{% static 'assets/img/flags/russia_flag.jpg' %}" alt="flag-img" class=" flag-sm mr-3 align-self-center">
+										<div>
+											<b>Russia</b>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex align-items-center">
+										<img src="{% static 'assets/img/flags/spain_flag.jpg' %}" alt="flag-img" class=" flag-sm mr-3 align-self-center">
+										<div>
+											<b>Spain</b>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="dropdown  header-msg1">
+								<a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg ">
+									<span class="badge badge-danger nav-link-badge">3</span><i class="fe fe-mail"></i>
+								</a>
+								<div class="dropdown-menu dropdown-list dropdown-menu-right">
+									<div class="dropdown-list-content">
+										<a href="#" class="dropdown-item ">
+											<img alt="image" src="{% static 'assets/img/avatar/6.jpg' %}" class="rounded-circle dropdown-item-img">
+											<div class="dropdown-item-desc">
+												<div class="dropdownmsg d-flex">
+													<div class="">
+														<b>Alan	Abraham</b>
+														<p>Your template awesome</p>
+													</div>
+													<div class="time">6 hours ago</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item dropdown-item-unread">
+											<img alt="image" src="{% static 'assets/img/avatar/4.jpg' %}" class="rounded-circle dropdown-item-img">
+											<div class="dropdown-item-desc">
+												<div class="dropdownmsg d-flex">
+													<div class="">
+														<b>Peter Clarkson</b>
+														<p>Your Order Shipped.....</p>
+													</div>
+													<div class="time">45 mins ago</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item">
+											<img alt="image" src="{% static 'assets/img/avatar/3.jpg' %}" class="rounded-circle dropdown-item-img">
+											<div class="dropdown-item-desc">
+												<div class="dropdownmsg d-flex">
+													<div class="">
+														<b>Lily	Avery</b>
+														<p>Hi!, I' am web developer</p>
+													</div>
+													<div class="time"> 8 hours ago</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item dropdown-item-unread">
+											<img alt="image" src="{% static 'assets/img/avatar/8.jpg' %}" class="rounded-circle dropdown-item-img">
+											<div class="dropdown-item-desc">
+												<div class="dropdownmsg d-flex">
+													<div class="">
+														<b>John	Bower</b>
+														<p>Hi!, I' am web designer</p>
+													</div>
+													<div class="time"> 3 hours ago</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item">
+											<img alt="image" src="{% static 'assets/img/avatar/5.jpg' %}" class="rounded-circle dropdown-item-img">
+											<div class="dropdown-item-desc">
+												<div class="dropdownmsg d-flex">
+													<div class="">
+														<b>Lily	Kerr</b>
+														<p>Hi!, I' am java developer</p>
+													</div>
+													<div class="time"> 15 mintues ago</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class=" text-center p-2">
+										<a href="#" class="text-dark">View All Messages</a>
+									</div>
+								</div>
+							</li>
+							<li class="dropdown  header-notify1">
+								<a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg ">
+									<i class="fe fe-bell"></i><span class="pulse bg-warning"></span>
+								</a>
+								<div class="dropdown-menu dropdown-list dropdown-menu-right">
+									<div class="dropdown-list-content">
+										<a href="#" class="dropdown-item">
+											<i class="fe fe-users text-primary"></i>
+											<div class="dropdown-item-desc">
+												<b>New Users Registered..</b>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item">
+											<i class="fe fe-alert-circle text-danger"></i>
+											<div class="dropdown-item-desc">
+												<b>Error message occurred....</b>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item">
+											<i class="fe fe-rotate-cw text-warning"></i>
+											<div class="dropdown-item-desc">
+												<b> Application Upadated</b>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item">
+											<i class="fe fe-shopping-cart text-success"></i>
+											<div class="dropdown-item-desc">
+												<b>Your items Arrived</b>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item">
+											<i class="fe fe-message-square text-orange"></i>
+											<div class="dropdown-item-desc">
+												<b>New Message received</b>
+											</div>
+										</a>
+									</div>
+									<div class=" text-center p-2">
+										<a href="#" class="text-dark">View All Notifications</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--End navbar mobile- -->
+
+                <!-- Sidebar menu-->
+				<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+				<aside class="app-sidebar toggle-sidebar">
+					<div class="app-sidebar__user">
+						<div class="user-body">
+							<img src="{% static 'assets/img/profile_photo/' %}{{request.session.photo}}" alt="profile-user" class="rounded-circle w-25">
+						</div>
+						<div class="user-info">
+							<a href="#" class=""><span class="app-sidebar__user-name font-weight-semibold">{{request.session.first_name}}</span><br>
+								<span class="text-muted app-sidebar__user-designation text-sm">{{request.session.role}}</span>
+							</a>
+						</div>
+					</div>
+					<ul class="side-menu toggle-menu">
+						<li class="slide">
+							<a class="side-menu__item" href="/index/"><i class="side-menu__icon fe fe-monitor"></i><span class="side-menu__label">Dashboard</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" href="/user_signup/"><i class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Users</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item"  href="/user_role/"><i class="side-menu__icon fe fe-aperture"></i><span class="side-menu__label">Role</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" href="/state/"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">State</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" href="/city/"><i class="side-menu__icon fe fe-map"></i><span class="side-menu__label">City</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" href="/circle/"><i class="side-menu__icon fe fe-layout"></i><span class="side-menu__label">Circle</span></a>
+						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" href="/camera/"><i class="side-menu__icon fe fe-instagram"></i><span class="side-menu__label">Camera</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" href="/report/"><i class="side-menu__icon fe fe-file"></i><span class="side-menu__label">Garbage Report</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" href="/complain/"><i class="side-menu__icon fe fe-layers"></i><span class="side-menu__label">Complain</span></a>
+						</li>
+
+					</ul>
+				</aside>
+				<!--sidemenu end-->
+
+                {% block content %}
+
+                <!-- body content -->
+
+                {% endblock %}
+
+
+				<!--Footer-->
+				<footer class="main-footer">
+					<div class="text-center">
+						Copyright &copy; CityOversight 2020. Design By<a href="#"> CityOversight Team </a>
+					</div>
+				</footer>
+				<!--Footer-->
+			</div>
+		</div>
+		<!--app closed-->
+
+		<!-- Back to top -->
+		<a href="#top" id="back-to-top" ><i class="fa fa-long-arrow-up"></i></a>
+
+		<!--Jquery.min js-->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'assets/js/parsley.min.js' %}"></script>
+
+		<link  rel="stylesheet" type="text/css" href="{% static 'assets/css/parsley.css' %}" />
+
+		<script src="{% static 'assets/js/pdfmake.min.js' %}"></script>
+		<script src="{% static 'assets/js/html2canvas.min.js' %}"></script>
+
+
+		<!--DataTables js-->
+		<script src="{% static 'assets/plugins/Datatable/js/jquery.dataTables.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/dataTables.bootstrap4.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/dataTables.buttons.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/buttons.bootstrap4.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/jszip.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/pdfmake.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/vfs_fonts.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/buttons.html5.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/buttons.print.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/Datatable/js/buttons.colVis.min.js' %}"></script>
+
+		<!--popper js-->
+		<script src="{% static 'assets/js/popper.js' %}"></script>
+
+		<!--Tooltip js-->
+		<script src="{% static 'assets/js/tooltip.js' %}"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!-- Jquery star rating-->
+		<script src="{% static 'assets/plugins/rating/jquery.rating-stars.js' %}"></script>
+
+		<!--Sidemenu js-->
+		<script src="{% static 'assets/plugins/sidemenu/sidemenu-1/sidemenu-1.js' %}"></script>
+
+		<!-- Sidemenu-responsive-tabs  js -->
+		<script src="{% static 'assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js' %}"></script>
+
+		<!-- Sidebar js-->
+		<script src="{% static 'assets/plugins/sidebar/sidebar.js' %}"></script>
+
+		<!--P-Scrollbar js-->
+		<script src="{% static 'assets/plugins/p-scroll/p-scroll.js' %}"></script>
+		<script src="{% static 'assets/js/p-scroll.js' %}"></script>
+
+		<!--Othercharts js-->
+		<script src="{% static 'assets/plugins/othercharts/jquery.knob.js' %}"></script>
+		<script src="{% static 'assets/plugins/othercharts/jquery.sparkline.min.js' %}"></script>
+
+		<!--OtherCharts js-->
+		<script src="{% static 'assets/js/othercharts.js' %}"></script>
+
+		<!--Datatable js-->
+		<script src="{% static 'assets/js/datatable.js' %}"></script>
+
+		<!-- SWITCHER JS -->
+		<script src="{% static 'assets/switcher/js/switcher.js' %}"></script>
+
+		<!--Showmore js-->
+		<script src="{% static 'assets/js/jquery.showmore.js' %}"></script>
+
+		<!--Scripts js-->
+		<script src="{% static 'assets/js/scripts1.js' %}"></script>
+
+	</body>
+
+<!-- Mirrored from www.spruko.com/demo/treal/html/Leftmenu-Closed-Sidebar/show_user_signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 14:02:08 GMT -->
+</html>
