@@ -1,0 +1,209 @@
+{% extends 'header_technician.html' %}
+{% load static %}
+{% block content %}
+	<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+                <!--app-content open-->
+				<div class="app-content">
+					<section class="section">
+
+					    <!--page-header open-->
+						<div class="page-header">
+							<ol class="breadcrumb"><!-- breadcrumb -->
+								<li class="breadcrumb-item"><a href="#"><i class="fe fe-home mr-2"></i>Pages</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Editprofile</li>
+							</ol><!-- End breadcrumb -->
+
+						</div>
+						<!--page-header closed-->
+
+                        <!--row open-->
+						<div class="row">
+							<div class="col-lg-12 col-xl-4 col-md-12 col-sm-12">
+								<div class="card">
+									<div class="card-header">
+										<h4>My Profile</h4>
+									</div>
+									<div class="card-body">
+										<form method="post" id="profileForm" action="/technician/edit_user_profile_photo/" enctype="multipart/form-data">
+											{% csrf_token %}
+										<div class="text-center">
+											<div class="userprofile social">
+												<div class="userpic"> <img id="pht" name="profile_photo" src="{% static 'assets/img/profile_photo/' %}{{request.session.photo}}" alt="" class="userpicimg"> </div>
+												<h3 class="username">{{user.first_name}}&nbsp;{{user.last_name}}</h3>
+												<p>{{user.role.role_name}}</p>
+													<div class="text-center">
+
+														<div class="file btn btn-primary mt-1" style="position:relative;overflow: hidden;">
+															<i class="fe fe-camera  mr-1"></i>Change Photo
+															<input type="file" name="profile_photo" style="position: absolute;font-size:50px;opacity:0;right:0;top:0;" value="{{user.profile_photo}}" accept="image/*"/>
+														</div>
+														<button type="submit" class="btn btn-secondary mt-1 mb-3 mb-xl-0" id="remove" formaction="/technician/remove_user_profile_photo/"><i class="fe fe-camera-off mr-1 mb-2"></i>Remove Photo</button>
+
+
+													</div>
+												<br/><button class="btn btn-primary mt-1" id="start_button" type="submit">Submit</button>
+											</div>
+										</div>
+
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-xl-8 col-md-12 col-sm-12">
+								<div class="card">
+									<div class="card-header">
+										<h4>Edit Profile</h4>
+									</div>
+									<div class="card-body">
+										<form method="post" action="/technician/edit_user_profile/" data-parsley-validate="">
+											{% csrf_token %}
+
+											<div class="row">
+												<div class="col-lg-6 col-md-12">
+													<div class="form-group">
+														<label>First Name</label>
+														<input type="text" class="form-control" id="first_name" placeholder="First name" name="first_name"
+															   value="{{user.first_name}}" data-parsley-required="true" data-parsley-required-message="First Name is required"/>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-12">
+													<div class="form-group">
+														<label>Last Name</label>
+														<input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name"
+															   value="{{user.last_name}}" data-parsley-required="true" data-parsley-required-message="Last Name is required"/>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label>Email Address</label>
+												<input type="email" class="form-control" id="email" placeholder="Email address" name="email"
+													   value="{{user.email}}" data-parsley-required="true" data-parsley-required-message="Email is required">
+											</div>
+											<div class="form-group">
+												<label>Contact Number</label>
+												<input type="text" data-type="contact-number" class="form-control" id="contact_no" placeholder="Contact number" name="contact_no"
+													   value="{{user.contact_no}}" data-parsley-required="true"
+													   data-parsley-required-message="Contact No is required" maxlength="10" data-parsley-pattern="^(\d{8}|\d{10})$">
+											</div>
+
+											<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+												<script>
+													$('[data-type="contact-number"]').keyup(function()
+													{
+													  var value = $(this).val();
+													  value = value.replace(/\D/g, "").split(/(?:([\d]{3}))/g).filter(s => s.length > 0).join("");
+													  $(this).val(value);
+													});
+
+													$('[data-type="contact-number"]').on("change, blur", function()
+													{
+													  var value = $(this).val();
+													  var maxLength = $(this).attr("maxLength");
+													  if (value.length != maxLength)
+													  {
+														$(this).addClass("highlight-error");
+													  } else
+													  {
+														$(this).removeClass("highlight-error");
+													  }
+													});
+												</script>
+
+												<style rel="stylesheet">
+													.highlight-error {
+														  border-color: red;
+														}
+												</style>
+
+											<div class="card-footer">
+												<button class="btn btn-primary" type="submit">Submit</button>
+											</div>
+										</form>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!--row closed-->
+
+					</section>
+				</div>
+				<!--app-content closed-->
+
+				<!-- Side-bar -->
+				<div class="sidebar sidebar-right sidebar-animate">
+					<div class="m-3">
+						<a href="#" class="text-right float-right" data-toggle="sidebar-right" data-target=".sidebar-right"><i class="fe fe-x"></i></a>
+					</div>
+					<div class="rightmenu ">
+						<h5>Latest News</h5>
+						<div class="p-2">
+							<div class="latest-timeline">
+								<ul class="timeline mb-0">
+									<li class="mt-0">
+										<a target="_blank" href="#">Sed ut perspiciatis </a>
+										<a href="#" class="float-right text-dark">23 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore. </p>
+									</li>
+									<li>
+										<a href="#">Nam libero tempore</a>
+										<a href="#" class="float-right text-dark">21 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  magna aliqua nisi ut aliquip. </p>
+									</li>
+									<li>
+										<a href="#">Excepteur  cupidatat</a>
+										<a href="#" class="float-right text-dark">18 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore  ut aliquip.</p>
+									</li>
+									<li class="mb-0">
+										<a href="#">Neque porro est</a>
+										<a href="#" class="float-right text-dark">17 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  aliqua nisi ut aliquip . </p>
+									</li>
+								</ul>
+							</div>
+							<div class="text-center">
+								<a href="#" class="btn btn-primary btn-block mb-4">Adding</a>
+							</div>
+						</div>
+						<h5>Visitors</h5>
+						<div class="card-body p-0">
+							<ul class="visitor list-unstyled list-unstyled-border">
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/6.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>10-4-2018</small></div>
+										<div class="media-title">Blake Vanessa</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/2.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>15-4-2018</small></div>
+										<div class="media-title">Keith Rutherford</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/3.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>17-4-2018</small></div>
+										<div class="media-title">Elizabeth Parsons</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media border-b0 p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/4.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>22-3-2018</small></div>
+										<div class="media-title">Nicola Lambert</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--side-bar Closed -->
+{% endblock %}
