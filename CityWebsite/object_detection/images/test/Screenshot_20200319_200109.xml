@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>Screenshot_20200319_200109.png</filename>
+	<path>C:\tensorflow1\models\research\object_detection\images\test\Screenshot_20200319_200109.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>194</width>
+		<height>207</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3</xmin>
+			<ymin>26</ymin>
+			<xmax>193</xmax>
+			<ymax>207</ymax>
+		</bndbox>
+	</object>
+</annotation>

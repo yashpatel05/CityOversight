@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>plastic_bottel1.jpg</filename>
+	<path>C:\tensorflow1\models\research\object_detection\images\test\plastic_bottel1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1426</width>
+		<height>1069</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>13</ymin>
+			<xmax>1425</xmax>
+			<ymax>1066</ymax>
+		</bndbox>
+	</object>
+</annotation>

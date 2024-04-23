@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>thermokol.jpeg</filename>
+	<path>C:\tensorflow1\models\research\object_detection\images\test\thermokol.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>90</width>
+		<height>90</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>18</xmin>
+			<ymin>2</ymin>
+			<xmax>90</xmax>
+			<ymax>87</ymax>
+		</bndbox>
+	</object>
+</annotation>

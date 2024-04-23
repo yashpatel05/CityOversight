@@ -1,0 +1,50 @@
+<annotation>
+	<folder>train</folder>
+	<filename>images - 2020-04-07T023421.343.jpg</filename>
+	<path>C:\tensorflow1\models\research\object_detection\images\train\images - 2020-04-07T023421.343.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>300</width>
+		<height>168</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>106</xmin>
+			<ymin>82</ymin>
+			<xmax>259</xmax>
+			<ymax>140</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>89</xmin>
+			<ymin>153</ymin>
+			<xmax>104</xmax>
+			<ymax>162</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>270</xmin>
+			<ymin>137</ymin>
+			<xmax>300</xmax>
+			<ymax>159</ymax>
+		</bndbox>
+	</object>
+</annotation>
