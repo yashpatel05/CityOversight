@@ -1,0 +1,400 @@
+{% extends 'header_employee.html' %}
+{% load static %}
+{% block content %}
+                <!--app-content open-->
+				<div class="app-content">
+					<section class="section">
+
+					    <!--page-header open-->
+						<div class="page-header">
+							<ol class="breadcrumb"><!-- breadcrumb -->
+								<li class="breadcrumb-item"><a href="#"><i class="fe fe-home mr-2"></i>Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+							</ol><!-- End breadcrumb -->
+
+						</div>
+						<!--page-header closed-->
+
+                        <!--row open-->
+						<div class="row">
+							<div class="col-sm-6 col-lg-6 col-xl-3">
+								<div class="card">
+									<div class="card-body iconfont text-left">
+										<h5 class="mb-3" style="color:rgb(220,20,60)">Users</h5>
+										<h4 class="mb-1 text-dark">{{user_count}}</h4>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-6 col-xl-3">
+								<div class="card">
+									<div class="card-body iconfont text-left">
+										<h5 class="mb-3" style="color:rgb(220,20,60)">Camera</h5>
+										<h4 class="mb-1 text-dark">{{camera_count}}</h4>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-6 col-xl-3">
+								<div class="card">
+									<div class="card-body iconfont text-left">
+										<h5 class="mb-3" style="color:rgb(220,20,60)">Garbage Report</h5>
+										<h4 class="mb-1 text-dark">{{report_count}}</h4>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-6 col-xl-3">
+								<div class="card">
+									<div class="card-body iconfont text-left">
+										<h5 class="mb-3" style="color:rgb(220,20,60)">Complain</h5>
+										<h4 class="mb-1 text-dark">{{complain_count}}</h4>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--end row-->
+
+						<!--row open-->
+						<div class="row">
+							<div class="col-md-12 col-lg-12 col-xl-12">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Users</h3>
+										<h6 class="card-subtitle">Pending</h6>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive mb-0">
+											<table class="table table-bordered text-nowrap mb-0">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>Name</th>
+														<th>Role Name</th>
+														<th>Email</th>
+														<th>Aadhar Card</th>
+														<th>Contact No</th>
+														<th>Created Date</th>
+														<th>Updated Date</th>
+														<th>Complain Points</th>
+														<th>Accept</th>
+														<th>Reject</th>
+													</tr>
+												</thead>
+												<tbody>
+												{% if user_pending_count > 0 %}
+													{%for user in user%}
+													<tr>
+														<td>{{user.first_name}}&nbsp;{{user.last_name}}</td>
+														<td>{{user.role.role_name}}</td>
+														<td>{{user.email}}</td>
+														<td>{{user.aadhar_card}}</td>
+														<td>{{user.contact_no}}</td>
+														<td>{{user.created_date}}</td>
+														<td>{{user.updated_date}}</td>
+														<td>{{user.complain_points}}</td>
+														<td><a href="/employee/accept_user/{{user.user_id}}"><img width="20" height="20" src="{% static 'assets/img/accept/1.png' %}" alt="accept"></a></td>
+														<td><a href="/employee/reject_user/{{user.user_id}}"><img width="20" height="20" src="{% static 'assets/img/reject/1.png' %}" alt="accept"></a></td>
+													</tr>
+													{% endfor %}
+													<script>
+														var tables = document.getElementsByTagName('table');
+														var table = tables[tables.length - 1];
+														var rows = table.rows;
+														for(var i = 0, td; i < rows.length; i++)
+														{
+															td = document.createElement('td');
+															td.appendChild(document.createTextNode(i + 1));
+															rows[i+1].insertBefore(td, rows[i+1].firstChild);
+														}
+													</script>
+												{% else %}
+													<tr>
+														<td colspan="12" align="center">No matching records found</td>
+													</tr>
+												{% endif %}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--row open-->
+						<div class="row">
+							<div class="col-md-12 col-lg-12 col-xl-12">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Camera</h3>
+										<h6 class="card-subtitle">Pending</h6>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive mb-0">
+											<table class="table table-bordered text-nowrap mb-0">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>Camera Name</th>
+														<th>Ip Address</th>
+														<th>Created Date</th>
+														<th>Updated Date</th>
+														<th>Circle Name</th>
+														<th>City Name</th>
+														<th>State Name</th>
+														<th>Accept</th>
+														<th>Reject</th>
+													</tr>
+												</thead>
+												<tbody>
+												{% if camera_pending_count > 0 %}
+													{%for camera in camera%}
+													<tr>
+														<td>{{camera.camera_name}}</td>
+														<td>{{camera.camera_ip_addr}}</td>
+														<td>{{camera.created_date}}</td>
+														<td>{{camera.updated_date}}</td>
+														<td>{{camera.circle.circle_name}}</td>
+														<td>{{camera.circle.city.city_name}}</td>
+														<td>{{camera.circle.city.state.state_name}}</td>
+														<td><a href="/employee/accept_camera/{{camera.camera_id}}"><img width="20" height="20" src="{% static 'assets/img/accept/1.png' %}" alt="accept"></a></td>
+														<td><a href="/employee/reject_camera/{{camera.camera_id}}"><img width="20" height="20" src="{% static 'assets/img/reject/1.png' %}" alt="accept"></a></td>
+													</tr>
+													{% endfor %}
+													<script>
+														var tables = document.getElementsByTagName('table');
+														var table = tables[tables.length - 1];
+														var rows = table.rows;
+														for(var i = 0, td; i < rows.length; i++)
+														{
+															td = document.createElement('td');
+															td.appendChild(document.createTextNode(i + 1));
+															rows[i+1].insertBefore(td, rows[i+1].firstChild);
+														}
+													</script>
+												{% else %}
+													<tr>
+														<td colspan="10" align="center">No matching records found</td>
+													</tr>
+												{% endif %}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!--row open-->
+						<div class="row">
+							<div class="col-md-12 col-lg-12 col-xl-12">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Garbage Report</h3>
+										<h6 class="card-subtitle">Pending</h6>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive mb-0">
+											<table class="table table-bordered text-nowrap mb-0">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>Camera Name</th>
+														<th>Generation Date</th>
+														<th>Garbage Detection</th>
+														<th>Circle Name</th>
+														<th>City Name</th>
+														<th>State Name</th>
+														<th>Accept</th>
+														<th>Reject</th>
+													</tr>
+												</thead>
+												<tbody>
+												{% if report_pending_count > 0 %}
+													{%for report in report%}
+													<tr>
+														<td>{{report.camera.camera_name}}</td>
+														<td>{{report.generated_date}}</td>
+														<td>{{report.garbage_detection}}</td>
+														<td>{{report.camera.circle.circle_name}}</td>
+														<td>{{report.camera.circle.city.city_name}}</td>
+														<td>{{report.camera.circle.city.state.state_name}}</td>
+														<td><a href="/employee/accept_garbage_report/{{report.report_id}}"><img width="20" height="20" src="{% static 'assets/img/accept/1.png' %}" alt="accept"></a></td>
+														<td><a href="/employee/reject_garbage_report/{{report.report_id}}"><img width="20" height="20" src="{% static 'assets/img/reject/1.png' %}" alt="accept"></a></td>
+													</tr>
+													{% endfor %}
+													<script>
+														var tables = document.getElementsByTagName('table');
+														var table = tables[tables.length - 1];
+														var rows = table.rows;
+														for(var i = 0, td; i < rows.length; i++)
+														{
+															td = document.createElement('td');
+															td.appendChild(document.createTextNode(i + 1));
+															rows[i+1].insertBefore(td, rows[i+1].firstChild);
+														}
+													</script>
+												{% else %}
+													<tr>
+														<td colspan="9" align="center">No matching records found</td>
+													</tr>
+												{% endif %}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--row open-->
+						<div class="row">
+							<div class="col-md-12 col-lg-12 col-xl-12">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Complain</h3>
+										<h6 class="card-subtitle">Pending</h6>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive mb-0">
+											<table class="table table-bordered text-nowrap mb-0">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>User Name</th>
+														<th>Uploaded Image</th>
+														<th>Description</th>
+														<th>Address</th>
+														<th>Created Date</th>
+														<th>Solved Date</th>
+														<th>Deduction Points</th>
+														<th>Accept</th>
+														<th>Reject</th>
+													</tr>
+												</thead>
+												<tbody>
+												{% if complain_pending_count > 0 %}
+													{%for complain in complain%}
+													<tr>
+														<td>{{complain.user.first_name}}&nbsp;{{complain.user.last_name}}</td>
+														<td><img src="{% static 'assets/img/complain/' %}{{complain.uploaded_image}}" style="height:200px;width:250px;" alt="image"></td>
+														<td>{{complain.description|wordwrap:25|linebreaksbr}}</td>
+														<td>{{complain.address|wordwrap:15|linebreaksbr}},
+															<br/>{{complain.city.city_name|wordwrap:5|linebreaksbr}},
+															<br/>{{complain.city.state.state_name|wordwrap:5|linebreaksbr}}.</td>
+														<td>{{complain.created_date}}</td>
+														<td>{{complain.solved_date}}</td>
+														<td>{{complain.deduction_points}}</td>
+														<td><a href="/employee/accept_complain/{{complain.complain_id}}"><img width="20" height="20" src="{% static 'assets/img/accept/1.png' %}" alt="accept"></a></td>
+														<td><a href="/employee/reject_complain/{{complain.complain_id}}"><img width="20" height="20" src="{% static 'assets/img/reject/1.png' %}" alt="accept"></a></td>
+													</tr>
+													{% endfor %}
+													<script>
+														var tables = document.getElementsByTagName('table');
+														var table = tables[tables.length - 1];
+														var rows = table.rows;
+														for(var i = 0, td; i < rows.length; i++)
+														{
+															td = document.createElement('td');
+															td.appendChild(document.createTextNode(i + 1));
+															rows[i+1].insertBefore(td, rows[i+1].firstChild);
+														}
+													</script>
+												{% else %}
+													<tr>
+														<td colspan="10" align="center">No matching records found</td>
+													</tr>
+												{% endif %}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</section>
+				</div>
+				<!--app-content closed-->
+
+
+				<!-- Side-bar -->
+				<div class="sidebar sidebar-right sidebar-animate">
+					<div class="m-3">
+						<a href="#" class="text-right float-right" data-toggle="sidebar-right" data-target=".sidebar-right"><i class="fe fe-x"></i></a>
+					</div>
+					<div class="rightmenu ">
+						<h5>Latest News</h5>
+						<div class="p-2">
+							<div class="latest-timeline">
+								<ul class="timeline mb-0">
+									<li class="mt-0">
+										<a target="_blank" href="#">Sed ut perspiciatis </a>
+										<a href="#" class="float-right text-dark">23 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore. </p>
+									</li>
+									<li>
+										<a href="#">Nam libero tempore</a>
+										<a href="#" class="float-right text-dark">21 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  magna aliqua nisi ut aliquip. </p>
+									</li>
+									<li>
+										<a href="#">Excepteur  cupidatat</a>
+										<a href="#" class="float-right text-dark">18 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore  ut aliquip.</p>
+									</li>
+									<li class="mb-0">
+										<a href="#">Neque porro est</a>
+										<a href="#" class="float-right text-dark">17 Apr, 2019</a>
+										<p class="text-muted">sed do eiusmod tempor  aliqua nisi ut aliquip . </p>
+									</li>
+								</ul>
+							</div>
+							<div class="text-center">
+								<a href="#" class="btn btn-primary btn-block mb-4">Adding</a>
+							</div>
+						</div>
+						<h5>Visitors</h5>
+						<div class="card-body p-0">
+							<ul class="visitor list-unstyled list-unstyled-border">
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/6.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>10-4-2018</small></div>
+										<div class="media-title">Blake Vanessa</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/2.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>15-4-2018</small></div>
+										<div class="media-title">Keith Rutherford</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/3.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>17-4-2018</small></div>
+										<div class="media-title">Elizabeth Parsons</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+								<li class="media border-b0 p-2 mb-0">
+									<img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/4.jpg" alt="avatar">
+									<div class="media-body">
+										<div class="float-right"><small>22-3-2018</small></div>
+										<div class="media-title">Nicola Lambert</div>
+										<small>sed do eiusmod tempor incididunt ut labore</small>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--side-bar Closed -->
+
+{% endblock %}
